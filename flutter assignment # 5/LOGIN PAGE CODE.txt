@@ -1,0 +1,117 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Login ',
+      home: Loginpage(),
+    );
+  }
+}
+
+class Loginpage extends StatefulWidget {
+  const Loginpage({Key? key}) : super(key: key);
+
+  @override
+  _LoginpageState createState() => _LoginpageState();
+}
+
+class _LoginpageState extends State<Loginpage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.deepPurpleAccent,
+        body: SafeArea(
+            child: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 18.0),
+          children: <Widget>[
+            // ignore: prefer_const_literals_to_create_immutables
+            Column(children: <Widget>[
+              SizedBox(
+                height: 80,
+              ),
+              Image(
+                  image: const NetworkImage(
+                      'https://tse2.mm.bing.net/th?id=OIP.ISCwWMuZRuNjBneCQ-ra5QHaFK&pid=Api&P=0&w=233&h=162')),
+              SizedBox(
+                height: 40,
+              ),
+              const Text(
+                " USER LOGIN",
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontStyle: FontStyle.italic),
+              )
+            ]),
+            const SizedBox(
+              height: 40.0,
+            ),
+            TextField(
+              decoration: const InputDecoration(
+                labelText: "EMAIL",
+                labelStyle: TextStyle(
+                    fontSize: 20,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.white),
+                filled: true,
+              ),
+            ),
+            SizedBox(
+              height: 40.0,
+            ),
+            TextField(
+              obscureText: true,
+              decoration: const InputDecoration(
+                labelText: "PASSWORD",
+                labelStyle: TextStyle(
+                    fontSize: 20,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.white),
+                filled: true,
+              ),
+            ),
+            SizedBox(
+              height: 40.0,
+            ),
+            Column(
+              children: <Widget>[
+                ButtonTheme(
+                  height: 50,
+                  buttonColor: Colors.blue,
+                  disabledColor: Colors.white,
+                  child: RaisedButton(
+                    onPressed: () {},
+                    child: Text(
+                      'LOGIN',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontStyle: FontStyle.italic,
+                          color: Colors.white),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  'NEW USER?? SIGN UP HERE!',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white),
+                )
+              ],
+            )
+          ],
+        )));
+  }
+}
